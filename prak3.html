@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Praktikum 3</title>
+</head>
+<body id="body">
+    <label for="background">Pilih Tema :</label>
+    <select name="background" id="background" onchange="background()">
+    <option value="">Pilih Tema</option>
+    <option value="Putih">Putih</option>
+    <option value="Hitam">Hitam</option>
+    </select>
+
+<script>
+    function background(){
+        var choice=document.getElementById("background");
+
+        if(choice.value=="Putih"){
+            document.body.style.backgroundColor = "white";
+            document.getElementById("body").style.color = "black";
+        }else{
+            document.body.style.backgroundColor = "black";
+            document.getElementById("body").style.color = "white";
+        }
+
+    }
+</script>
+
+    <h1>Hallo!</h1>
+
+    <label for="cuaca">Bagaimana Cuaca Hari ini Di sekitarmu? <br></label>
+    <select name="cuaca" id="cuaca" onchange="cuaca()">
+        <option value="">Pilih Cuaca</option>
+        <option value="Cerah">Cerah</option>
+        <option value="Mendung">Mendung</option>
+        <option value="Hujan">Hujan</option>
+    </select>
+    <p id="teks"></p>
+<script>
+    function cuaca(){
+        var choice=document.getElementById("cuaca");
+
+        if(choice.value=="Cerah"){
+            var cuaca=document.getElementById("teks");
+            cuaca.innerText = "Hari Cerah, waktu yang pas untuk piknik!";
+        } else if(choice.value=="Mendung"){
+            var cuaca=document.getElementById("teks");
+            cuaca.innerText = "Kalau mau bepergian, jangan lupa sedia payung sebelum hujan!";
+        } else if(choice.value=="Hujan"){
+            var cuaca=document.getElementById("teks");
+            cuaca.innerText = "Hujan, mending dirumah makan mie rebus!";
+        }
+    }
+</script>
+
+    <h3>Faktorial</h3>
+    <p>Masukan Angka: </p>
+    <input type="number" name="Angka" id="angka">
+    <button type="submit" onclick="faktorial()">Periksa</button>
+
+<script>
+    function faktorial(){
+        var faktor = document.getElementById("angka");
+            let hasil = 1;
+            if (faktor.value == 0){
+                hasil = 0;
+            }else if(faktor.value == 1){
+                hasil=1;
+            }else{
+                for(var i = faktor.value; i >= 1; i--){
+                hasil = hasil * i;
+                }
+            }
+        var result = document.getElementById("Hasil");
+        result.innerText = "Hasil : " + hasil;
+    }
+</script>
+
+<p id="Hasil"></p>
+
+</body>
